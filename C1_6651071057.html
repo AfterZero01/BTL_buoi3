@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang giới thiệu cá nhân của sinh viên">
+    <meta name="author" content="Phan Tấn Quân">
+    <meta name="keywords" content="sinh viên, CNTT, giới thiệu">
+    <title>Giới thiệu bản thân – Nguyễn Văn A</title>
+    
+    <style>
+        /* Reset CSS cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Phần Header và Banner */
+        header {
+            background: linear-gradient(135deg, #009688, #4caf50); /* Màu xanh giả lập banner */
+            color: white;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid #ddd;
+        }
+
+        hgroup h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        hgroup h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Ảnh đại diện (Avatar) */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Thanh điều hướng (Nav) */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            display: flex;
+            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Màu sắc cho từng nút điều hướng */
+        .btn-gioithieu { background-color: #2e8b57; }
+        .btn-kynang { background-color: #f4a460; }
+        .btn-lienhe { background-color: #a9a9a9; }
+
+        /* Nội dung chính (3 Cột) */
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Chia 3 cột bằng nhau */
+            gap: 30px;
+            padding: 40px 50px;
+            background-color: white;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        main section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #222;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        main section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Danh sách kỹ năng */
+        #kynang ul {
+            list-style-type: none;
+        }
+
+        #kynang li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Tạo icon checkmark giả cho list */
+        #kynang li::before {
+            content: '✅';
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Phần liên hệ */
+        address {
+            font-style: normal;
+        }
+        
+        address p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        address a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        address a:hover {
+            color: #009688;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #87ceeb; /* Màu xanh dương nhạt như hình */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive: Giao diện điện thoại */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            main {
+                grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Phần Header -->
+    <header>
+        <!-- Hgroup bắt buộc theo yêu cầu -->
+        <hgroup>
+            <h1>Phan Tấn Quân</h1>
+            <h2>Sinh viên CNTT - K66</h2>
+        </hgroup>
+        <!-- Bạn có thể thay link ảnh này bằng ảnh thật của bạn -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDN0wS6Goqk-JCPwyRI0C3Ls9Lp_NpYgcJA5LqRC84q7O-dQBjNboM5Ue_&s=10" alt="Ảnh đại diện" class="avatar">
+    </header>
+
+    <!-- Thanh điều hướng với các liên kết điều hướng nội trang -->
+    <nav>
+        <a href="#gioithieu" class="btn-gioithieu">GIỚI THIỆU</a>
+        <a href="#kynang" class="btn-kynang">KỸ NĂNG</a>
+        <a href="#lienhe" class="btn-lienhe">LIÊN HỆ</a>
+    </nav>
+
+    <!-- Main bao bọc toàn bộ nội dung chính -->
+    <main>
+        <!-- Section Giới thiệu -->
+        <section id="gioithieu">
+            <h2>Giới thiệu</h2>
+            <p>Chào bạn! Tôi là một sinh viên đam mê công nghệ thông tin. Tôi luôn tìm tòi, học hỏi và cập nhật các xu hướng công nghệ mới nhất hiện nay.</p>
+            <p>Ước mơ của tôi là trở thành một lập trình viên Fullstack, tham gia vào các dự án phần mềm mang lại giá trị thực tiễn cho cộng đồng.</p>
+        </section>
+
+        <!-- Section Kỹ năng -->
+        <section id="kynang">
+            <h2>Kỹ năng</h2>
+            <ul>
+                <li>Thiết kế Web (HTML5, CSS3, JS)</li>
+                <li>Lập trình Backend cơ bản</li>
+                <li>Sử dụng Git & GitHub</li>
+                <li>Thiết kế UI/UX cơ bản</li>
+            </ul>
+        </section>
+
+        <!-- Section Liên hệ dùng thẻ address -->
+        <section id="lienhe">
+            <h2>Liên hệ</h2>
+            <address>
+                <p>📧 <a href="mailto:6651071057@gmail.com">6651071057@gmail.com</a></p>
+                <p>📞 <a href="tel:0901234567">0901 234 567</a></p>
+            </address>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 – Họ và tên sinh viên. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
