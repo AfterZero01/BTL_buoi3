@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelodyVN Online - Multimedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header banner */
+        header {
+            background-color: #e2e8f0;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        hgroup h1 {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        hgroup h2 {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        /* Bố cục trang */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .content-area {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        /* Khối nội dung Video & Audio */
+        section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            border-radius: 6px;
+            background-color: #000;
+        }
+
+        .lesson-desc {
+            margin-top: 10px;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .audio-item {
+            margin-bottom: 15px;
+        }
+
+        .audio-item p {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #334155;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Cột Aside - Lịch học */
+        aside {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            align-self: flex-start;
+        }
+
+        aside h3 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        table th, table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px;
+        }
+
+        table thead {
+            background-color: #f1f5f9;
+            font-weight: bold;
+        }
+
+        table tbody tr:nth-child(1) { background-color: #fef3c7; }
+        table tbody tr:nth-child(2) { background-color: #e0f2fe; }
+        table tbody tr:nth-child(3) { background-color: #fce7f3; }
+
+        /* Footer */
+        footer {
+            background-color: #e2e8f0;
+            color: #475569;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            border-top: 1px solid #cbd5e1;
+        }
+
+        footer address {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header chính với hgroup -->
+    <header>
+        <hgroup>
+            <h1>MelodyVN Online</h1>
+            <h2>Học nhạc mọi lúc mọi nơi</h2>
+        </hgroup>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="content-area">
+                <!-- Section 1: Video bài học -->
+                <section>
+                    <h2>Bài học: Hợp âm cơ bản Guitar</h2>
+                    <video width="640" height="360" controls poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVg4fZknJ_4NZLzIFTb3qEusFsktBYhHf4oNR6idYYsw&s" preload="metadata">
+                        <source src="bai_hoc_guitar.mp4" type="video/mp4">
+                        <source src="bai_hoc_guitar.webm" type="video/webm">
+                        <p>Trình duyệt của bạn không hỗ trợ video.</p>
+                    </video>
+                    <p class="lesson-desc">Học cách bấm các hợp âm guitar phổ biến nhất trong bài học video này.</p>
+                </section>
+
+                <!-- Section 2: Nghe thử giai điệu -->
+                <section>
+                    <h2>Nghe thử giai điệu mẫu</h2>
+                    
+                    <!-- Bài 1: Preload none -->
+                    <div class="audio-item">
+                        <p>Canon in D – Piano</p>
+                        <audio controls preload="none">
+                            <source src="canon_piano.mp3" type="audio/mpeg">
+                            <source src="canon_piano.ogg" type="audio/ogg">
+                            <p>Trình duyệt không hỗ trợ audio.</p>
+                        </audio>
+                    </div>
+
+                    <!-- Bài 2: Autoplay & Loop -->
+                    <div class="audio-item">
+                        <p>Fur Elise – Piano</p>
+                        <!-- Thuộc tính 'loop' sẽ làm cho đoạn nhạc tự động phát lại từ đầu sau khi kết thúc -->
+                        <audio controls autoplay loop>
+                            <source src="fur_elise_piano.mp3" type="audio/mpeg">
+                            <source src="fur_elise_piano.ogg" type="audio/ogg">
+                            <p>Trình duyệt không hỗ trợ audio.</p>
+                        </audio>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Cột Lịch học tuần này (Aside) -->
+            <aside>
+                <h3>Lịch học tuần này</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Buổi học</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thứ Hai</td>
+                            <td>Guitar Cơ bản</td>
+                        </tr>
+                        <tr>
+                            <td>Thứ Tư</td>
+                            <td>Piano Nhập môn</td>
+                        </tr>
+                        <tr>
+                            <td>Thứ Sáu</td>
+                            <td>Hợp âm nâng cao</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Footer thông tin liên hệ -->
+    <footer>
+        <address>
+            Trung tâm Âm nhạc MelodyVN - 123 Đường Nhạc, Quận Âm - Email: info@melodyvn.com - Hotline: 1900 6789
+        </address>
+    </footer>
+
+</body>
+</html>
