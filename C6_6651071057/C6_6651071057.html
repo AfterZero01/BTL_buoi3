@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt vé máy bay UTC2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eef5f9;
+            color: #333;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Brand Logo */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 650px;
+        }
+
+        .brand-logo span {
+            color: #ff6600;
+        }
+
+        /* Card Container */
+        .booking-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 650px;
+            padding: 30px;
+            border: 1px solid #e1e8ed;
+        }
+
+        .booking-card h1 {
+            font-size: 1.35rem;
+            text-align: center;
+            color: #1a2b4c;
+            margin-bottom: 25px;
+        }
+
+        /* Form Sections */
+        .form-section {
+            margin-bottom: 22px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e1e8ed;
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .form-section h2 {
+            font-size: 1.05rem;
+            color: #1a2b4c;
+            margin-bottom: 12px;
+        }
+
+        /* Input Grid Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .form-group input, 
+        .form-group select {
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+            background-color: #f8fafc;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            border-color: #0066cc;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+        }
+
+        /* Output Result Box */
+        .result-box {
+            background-color: #f0f7ff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        output {
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 1.1rem;
+        }
+
+        .small-note {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* Security Box */
+        .security-info {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background-color: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            width: 100%;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-submit:hover {
+            background-color: #e65c00;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo VietAir -->
+    <div class="brand-logo">
+        ✈ UTC<span>2</span>
+    </div>
+
+    <!-- Container Form Đặt Vé -->
+    <div class="booking-card">
+        <h1>Đặt vé máy bay UTC2 - Kết quả Bài tập</h1>
+
+        <form action="xu_ly_ve.php" method="POST">
+
+            <!-- Datalist gợi ý Thành phố (dùng chung cho Điểm đi & Điểm đến) -->
+            <datalist id="danhsach_thanh_pho">
+                <option value="Hà Nội – HAN">
+                <option value="TP. Hồ Chí Minh - SGN">
+                <option value="Đà Nẵng – DAD">
+                <option value="Nha Trang - CXR">
+                <option value="Phú Quốc – PQC">
+                <option value="Hải Phòng - HPH">
+                <option value="Cần Thơ – VCA">
+            </datalist>
+
+            <!-- Datalist gợi ý Mã giảm giá -->
+            <datalist id="ma_uu_dai">
+                <option value="SUMMER20">
+                <option value="NEWMEMBER">
+                <option value="HOLIDAY50">
+            </datalist>
+
+            <!-- Phần 1: Thông tin chuyến bay -->
+            <div class="form-section">
+                <h2>1. Thông tin chuyến bay</h2>
+                
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="diem_di">Điểm đi:</label>
+                        <input type="text" name="diem_di" id="diem_di" list="danhsach_thanh_pho" placeholder="Nhập điểm đi">
+                    </div>
+                    <div class="form-group">
+                        <label for="diem_den">Điểm đến:</label>
+                        <input type="text" name="diem_den" id="diem_den" list="danhsach_thanh_pho" placeholder="Nhập điểm đến">
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="ngay_di">Ngày đi:</label>
+                        <input type="date" name="ngay_di" id="ngay_di" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ngay_ve">Ngày về:</label>
+                        <input type="date" name="ngay_ve" id="ngay_ve">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hang_ghe">Hạng ghế:</label>
+                    <select name="hang_ghe" id="hang_ghe">
+                        <optgroup label="Phổ thông">
+                            <option value="eco_basic">Phổ thông basic – 1.200.000₫</option>
+                            <option value="eco_flex">Phổ thông flex – 1.800.000₫</option>
+                        </optgroup>
+                        <optgroup label="Thương gia">
+                            <option value="biz">Thương gia biz – 4.500.000₫</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Phần 2: Thông tin hành khách -->
+            <div class="form-section">
+                <h2>2. Thông tin hành khách</h2>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label for="nguoi_lon">Số người lớn:</label>
+                        <input type="number" name="nguoi_lon" id="nguoi_lon" min="1" max="9" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="tre_em">Số trẻ em:</label>
+                        <input type="number" name="tre_em" id="tre_em" min="0" max="9" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="ma_giam">Mã giảm giá:</label>
+                        <input type="text" name="ma_giam" id="ma_giam" placeholder="Nhập mã nếu có" list="ma_uu_dai">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phần 3: Kết quả ước tính -->
+            <div class="form-section">
+                <h2>3. Kết quả ước tính</h2>
+                <div class="result-box">
+                    <label for="tong_tien">Tổng tiền ước tính:</label>
+                    <output name="tong_tien" id="tong_tien" for="hang_ghe nguoi_lon tre_em">3.600.000 VNĐ</output>
+                    <span class="small-note">(for illustration only, matching input example)</span>
+                </div>
+            </div>
+
+            <!-- Phần 4: Bảo mật giao dịch -->
+            <div class="form-section">
+                <h2>4. Bảo mật giao dịch</h2>
+                <!-- Thẻ keygen minh họa cấu trúc -->
+                <keygen name="security_key" keytype="rsa" style="display:none;">
+                
+                <div class="security-info">
+                    🔒
+                    <span>Hệ thống sẽ tạo một cặp khóa mã hóa để bảo vệ thông tin của bạn. <i>(Keygen has been deprecated and does not display on modern browsers; code only to structure).</i></span>
+                </div>
+            </div>
+
+            <!-- Nút gửi -->
+            <button type="submit" class="btn-submit">✈ Tìm chuyến bay</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
